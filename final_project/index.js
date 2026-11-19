@@ -5,6 +5,8 @@ const customer_routes = require('./router/auth_users.js').authenticated;
 const genl_routes = require('./router/general.js').general;
 
 const app = express();
+const books=require('./router/booksdb.js');
+app.get('/_internal/books',(req,res)=>{res.json(books);});
 
 app.use(express.json());
 
